@@ -21,5 +21,11 @@ while (true){
     }else if (y_con > 100){
         led.unplot(cordinateX, cordinateY)
         cordinateY += 0.5
+    }else if (x_con < 100) {
+        led.unplot(cordinateX, cordinateY)
+        cordinateY += 0.5
+    }else if (y_con < 100) {
+        led.unplot(cordinateX, cordinateY)
+        cordinateY += 0.5
     }
 }
