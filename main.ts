@@ -14,19 +14,11 @@ while (true){
     x_con = pins.map(x, 0, 1023, 0, 200)
     y_con = pins.map(y, 0, 1023, 0, 200)
 
-    if (x_con > 100) {
-        led.unplot(cordinateX, cordinateY)
-        cordinateX += 0.5
-        led.plot(cordinateX, cordinateY)
-    } else if (y_con > 100) {
-        led.unplot(cordinateX, cordinateY)
-        cordinateY += 0.5
-        led.plot(cordinateX, cordinateY)
-    } else if (x_con < 100) {
-        basic.showNumber(x)
-    } else if (y_con < 100) {
-        basic.showNumber(y)
-    } else{
-        led.plot(cordinateX, cordinateY)
-    }
+    basic.showString("X =", 50)
+    basic.showNumber(x, 50)
+
+    basic.showString("Y = ", 50)
+    basic.showNumber(y, 50)
+
+    basic.clearScreen()
 }
