@@ -23,13 +23,9 @@ while (true){
         cordinateY += 0.5
         led.plot(cordinateX, cordinateY)
     } else if (x_con < 100) {
-        led.unplot(cordinateX, cordinateY)
-        cordinateX += 0.5
-        led.plot(cordinateX, cordinateY)
+        basic.showNumber(x)
     } else if (y_con < 100) {
-        led.unplot(cordinateX, cordinateY)
-        cordinateY += 0.5
-        led.plot(cordinateX, cordinateY)
+        basic.showNumber(y)
     } else{
         led.plot(cordinateX, cordinateY)
     }
