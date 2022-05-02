@@ -8,17 +8,29 @@ let cordinateY = 2
 while (true){
     basic.pause(1000)
 
+    led.plot(cordinateX, cordinateY)
+
     x = pins.analogReadPin(AnalogPin.P1)
     y = pins.analogReadPin(AnalogPin.P0)
 
     x_con = pins.map(x, 0, 1023, 0, 200)
     y_con = pins.map(y, 0, 1023, 0, 200)
 
-    basic.showString("X =", 50)
-    basic.showNumber(x, 50)
-
-    basic.showString("Y = ", 50)
-    basic.showNumber(y, 50)
-
-    basic.clearScreen()
+    if (x > 500){
+        basic.clearScreen()
+        cordinateX -= 1
+        led.plot(cordinateX, cordinateY)
+    } else if (y > 500) {
+        basic.clearScreen()
+        cordinateY += 1
+        led.plot(cordinateX, cordinateY)
+    } else if (x < 400) {
+        basic.clearScreen()
+        cordinateX += 1
+        led.plot(cordinateX, cordinateY)
+    } else if (y < 400) {
+        basic.clearScreen()
+        cordinateY -= 1
+        led.plot(cordinateX, cordinateY)
+    }
 }
